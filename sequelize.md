@@ -256,65 +256,150 @@ npx sequelize-cli db:seed:all
 
 ## 8. Связи между таблицами
 
+### 8.0. Как выбрать тип связи?
+
+- **Один к одному (One-to-One):**
+  Используйте, если каждой записи в одной таблице соответствует ровно одна запись в другой.
+  Пример: `User` и `Profile` — у каждого пользователя только один профиль.
+
+- **Один ко многим (One-to-Many):**
+  Используйте, если одной записи в первой таблице соответствует несколько записей во второй.
+  Пример: `User` и `Post` — один пользователь может иметь много постов.
+
+- **Многие ко многим (Many-to-Many):**
+  Используйте, если каждой записи в первой таблице может соответствовать несколько записей во второй, и наоборот.
+  Пример: `User` и `Role` — пользователь может иметь несколько ролей, а роль — несколько пользователей.
+
+---
+
 ### 8.1. Один к одному (One-to-One)
 
-**В миграции:**
+**В миграции** (например, `db/migrations/xxxx-create-profile.js`):
 
 ```javascript
 userId: {
   type: Sequelize.INTEGER,
-  references: { model: 'Users', key: 'id' }
+  references: { model: 'Users', key: 'id' },
+  onUpdate: 'CASCADE',
+  onDelete: 'SET NULL'
 }
 ```
 
-**В моделях:**
+**В моделях**:
 
-```javascript
-User.hasOne(Profile, { foreignKey: 'userId' });
-Profile.belongsTo(User, { foreignKey: 'userId' });
-```
+- В `db/models/user.js`:
+
+  ```javascript
+  // ...existing code...
+  static associate(models) {
+    User.hasOne(models.Profile, { foreignKey: 'userId' });
+  }
+  // ...existing code...
+  ```
+
+- В `db/models/profile.js`:
+
+  ```javascript
+  // ...existing code...
+  static associate(models) {
+    Profile.belongsTo(models.User, { foreignKey: 'userId' });
+  }
+  // ...existing code...
+  ```
+
+---
 
 ### 8.2. Один ко многим (One-to-Many)
 
-**В миграции:**
+**В миграции** (например, `db/migrations/xxxx-create-post.js`):
 
 ```javascript
 userId: {
   type: Sequelize.INTEGER,
-  references: { model: 'Users', key: 'id' }
+  references: { model: 'Users', key: 'id' },
+  onUpdate: 'CASCADE',
+  onDelete: 'SET NULL'
 }
 ```
 
-**В моделях:**
+**В моделях**:
 
-```javascript
-User.hasMany(Post, { foreignKey: 'userId' });
-Post.belongsTo(User, { foreignKey: 'userId' });
-```
+- В `db/models/user.js`:
+
+  ```javascript
+  // ...existing code...
+  static associate(models) {
+    User.hasMany(models.Post, { foreignKey: 'userId' });
+  }
+  // ...existing code...
+  ```
+
+- В `db/models/post.js`:
+
+  ```javascript
+  // ...existing code...
+  static associate(models) {
+    Post.belongsTo(models.User, { foreignKey: 'userId' });
+  }
+  // ...existing code...
+  ```
+
+---
 
 ### 8.3. Многие ко многим (Many-to-Many)
 
-**Создайте промежуточную таблицу миграцией:**
+**В миграции** (например, `db/migrations/xxxx-create-userrole.js`):
 
 ```javascript
 await queryInterface.createTable('UserRoles', {
   userId: {
     type: Sequelize.INTEGER,
     references: { model: 'Users', key: 'id' },
+    onUpdate: 'CASCADE',
+    onDelete: 'CASCADE'
   },
   roleId: {
     type: Sequelize.INTEGER,
     references: { model: 'Roles', key: 'id' },
+    onUpdate: 'CASCADE',
+    onDelete: 'CASCADE'
   },
+  createdAt: { allowNull: false, type: Sequelize.DATE },
+  updatedAt: { allowNull: false, type: Sequelize.DATE },
 });
 ```
 
-**В моделях:**
+**В моделях**:
 
-```javascript
-User.belongsToMany(Role, { through: 'UserRoles', foreignKey: 'userId' });
-Role.belongsToMany(User, { through: 'UserRoles', foreignKey: 'roleId' });
-```
+- В `db/models/user.js`:
+
+  ```javascript
+  // ...existing code...
+  static associate(models) {
+    User.belongsToMany(models.Role, { through: 'UserRoles', foreignKey: 'userId' });
+  }
+  // ...existing code...
+  ```
+
+- В `db/models/role.js`:
+
+  ```javascript
+  // ...existing code...
+  static associate(models) {
+    Role.belongsToMany(models.User, { through: 'UserRoles', foreignKey: 'roleId' });
+  }
+  // ...existing code...
+  ```
+
+---
+
+**Где вносить изменения для связей?**
+
+- В файлах моделей (`db/models/*.js`) — в методе `associate(models)` описываются связи.
+- В миграциях (`db/migrations/*.js`) — добавляются внешние ключи через `references`.
+
+**Рекомендация:**
+После создания моделей и миграций обязательно проверьте, что связи описаны в обоих моделях, чтобы корректно работали методы поиска связанных данных.
 
 ---
 
