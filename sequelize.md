@@ -292,7 +292,7 @@ userId: {
   ```javascript
   // ...existing code...
   static associate(models) {
-    User.hasOne(models.Profile, { foreignKey: 'userId' });
+    this.hasOne(models.Profile, { foreignKey: 'userId' });
   }
   // ...existing code...
   ```
@@ -302,7 +302,7 @@ userId: {
   ```javascript
   // ...existing code...
   static associate(models) {
-    Profile.belongsTo(models.User, { foreignKey: 'userId' });
+    this.belongsTo(models.User, { foreignKey: 'userId' });
   }
   // ...existing code...
   ```
@@ -329,7 +329,7 @@ userId: {
   ```javascript
   // ...existing code...
   static associate(models) {
-    User.hasMany(models.Post, { foreignKey: 'userId' });
+    this.hasMany(models.Post, { foreignKey: 'userId' });
   }
   // ...existing code...
   ```
@@ -339,7 +339,7 @@ userId: {
   ```javascript
   // ...existing code...
   static associate(models) {
-    Post.belongsTo(models.User, { foreignKey: 'userId' });
+    this.belongsTo(models.User, { foreignKey: 'userId' });
   }
   // ...existing code...
   ```
@@ -376,7 +376,7 @@ await queryInterface.createTable('UserRoles', {
   ```javascript
   // ...existing code...
   static associate(models) {
-    User.belongsToMany(models.Role, { through: 'UserRoles', foreignKey: 'userId' });
+    this.belongsToMany(models.Role, { through: 'UserRoles', foreignKey: 'userId' });
   }
   // ...existing code...
   ```
@@ -386,7 +386,7 @@ await queryInterface.createTable('UserRoles', {
   ```javascript
   // ...existing code...
   static associate(models) {
-    Role.belongsToMany(models.User, { through: 'UserRoles', foreignKey: 'roleId' });
+    this.belongsToMany(models.User, { through: 'UserRoles', foreignKey: 'roleId' });
   }
   // ...existing code...
   ```
@@ -395,7 +395,7 @@ await queryInterface.createTable('UserRoles', {
 
 **Где вносить изменения для связей?**
 
-- В файлах моделей (`db/models/*.js`) — в методе `associate(models)` описываются связи.
+- В файлах моделей (`db/models/*.js`) — в методе `associate(models)` используйте `this` для описания связей.
 - В миграциях (`db/migrations/*.js`) — добавляются внешние ключи через `references`.
 
 **Рекомендация:**
