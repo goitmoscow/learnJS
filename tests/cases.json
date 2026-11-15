@@ -1,0 +1,1628 @@
+[
+  {
+    "day": 1,
+    "name": "basketTotal",
+    "title": "Стоимость покупки",
+    "prompt": "Есть цена price и количество quantity. Вычислите общую стоимость. В первый день решайте выражением, без своей функции.",
+    "examples": [
+      "150 и 3: 450",
+      "Цена 0: итог 0"
+    ],
+    "solution": "function basketTotal(price, quantity) { return price * quantity; }",
+    "cases": [
+      [
+        [
+          150,
+          3
+        ],
+        450
+      ],
+      [
+        [
+          0,
+          5
+        ],
+        0
+      ],
+      [
+        [
+          12.5,
+          2
+        ],
+        25
+      ]
+    ]
+  },
+  {
+    "day": 1,
+    "name": "discountPrice",
+    "title": "Цена со скидкой",
+    "prompt": "Для price и discountPercent вычислите цену после скидки. Скидка передаётся числом от 0 до 100.",
+    "examples": [
+      "1000 и 15: 850",
+      "200 и 0: 200"
+    ],
+    "solution": "function discountPrice(price, discountPercent) { return price * (1 - discountPercent / 100); }",
+    "cases": [
+      [
+        [
+          1000,
+          15
+        ],
+        850
+      ],
+      [
+        [
+          200,
+          0
+        ],
+        200
+      ],
+      [
+        [
+          200,
+          100
+        ],
+        0
+      ]
+    ]
+  },
+  {
+    "day": 1,
+    "name": "addTextNumbers",
+    "title": "Числа из текста",
+    "prompt": "Даны две строки с корректными числами. Получите числовую сумму. Объясните, зачем здесь Number.",
+    "examples": [
+      "'12' и '3': 15",
+      "'-2' и '2': 0"
+    ],
+    "solution": "function addTextNumbers(a, b) { return Number(a) + Number(b); }",
+    "cases": [
+      [
+        [
+          "12",
+          "3"
+        ],
+        15
+      ],
+      [
+        [
+          "-2",
+          "2"
+        ],
+        0
+      ],
+      [
+        [
+          "0",
+          "0"
+        ],
+        0
+      ]
+    ]
+  },
+  {
+    "day": 1,
+    "name": "isEven",
+    "title": "Проверка чётности",
+    "prompt": "Для целого number получите boolean: делится ли число на 2 без остатка.",
+    "examples": [
+      "8: true",
+      "7: false",
+      "0: true"
+    ],
+    "solution": "function isEven(number) { return number % 2 === 0; }",
+    "cases": [
+      [
+        [
+          8
+        ],
+        true
+      ],
+      [
+        [
+          7
+        ],
+        false
+      ],
+      [
+        [
+          0
+        ],
+        true
+      ],
+      [
+        [
+          -4
+        ],
+        true
+      ]
+    ]
+  },
+  {
+    "day": 2,
+    "name": "canEnter",
+    "title": "Проверка возраста",
+    "prompt": "Напишите canEnter(age), возвращающую true с 18 лет и false для меньшего возраста.",
+    "examples": [
+      "18: true",
+      "17: false"
+    ],
+    "solution": "function canEnter(age) { return age >= 18; }",
+    "cases": [
+      [
+        [
+          18
+        ],
+        true
+      ],
+      [
+        [
+          17
+        ],
+        false
+      ],
+      [
+        [
+          0
+        ],
+        false
+      ],
+      [
+        [
+          70
+        ],
+        true
+      ]
+    ]
+  },
+  {
+    "day": 2,
+    "name": "maxOfTwo",
+    "title": "Большее число",
+    "prompt": "Верните большее из двух чисел. Если числа равны, верните это число. Используйте if.",
+    "examples": [
+      "3, 8: 8",
+      "5, 5: 5"
+    ],
+    "solution": "function maxOfTwo(a, b) { if (a >= b) return a; return b; }",
+    "cases": [
+      [
+        [
+          3,
+          8
+        ],
+        8
+      ],
+      [
+        [
+          5,
+          5
+        ],
+        5
+      ],
+      [
+        [
+          -8,
+          -2
+        ],
+        -2
+      ]
+    ]
+  },
+  {
+    "day": 2,
+    "name": "ticketPrice",
+    "title": "Цена билета",
+    "prompt": "До 7 лет билет бесплатный, с 7 до 17 включительно стоит 100, с 18 лет стоит 200. Верните число.",
+    "examples": [
+      "6: 0",
+      "7: 100",
+      "18: 200"
+    ],
+    "solution": "function ticketPrice(age) { if (age < 7) return 0; if (age < 18) return 100; return 200; }",
+    "cases": [
+      [
+        [
+          0
+        ],
+        0
+      ],
+      [
+        [
+          6
+        ],
+        0
+      ],
+      [
+        [
+          7
+        ],
+        100
+      ],
+      [
+        [
+          17
+        ],
+        100
+      ],
+      [
+        [
+          18
+        ],
+        200
+      ]
+    ]
+  },
+  {
+    "day": 2,
+    "name": "isInRange",
+    "title": "Число в диапазоне",
+    "prompt": "Верните true, если number находится между min и max включительно. Дано min <= max.",
+    "examples": [
+      "5, 1, 5: true",
+      "0, 1, 5: false"
+    ],
+    "solution": "function isInRange(number, min, max) { return number >= min && number <= max; }",
+    "cases": [
+      [
+        [
+          5,
+          1,
+          5
+        ],
+        true
+      ],
+      [
+        [
+          1,
+          1,
+          5
+        ],
+        true
+      ],
+      [
+        [
+          0,
+          1,
+          5
+        ],
+        false
+      ],
+      [
+        [
+          3,
+          3,
+          3
+        ],
+        true
+      ]
+    ]
+  },
+  {
+    "day": 3,
+    "name": "sumTo",
+    "title": "Сумма от 1 до n",
+    "prompt": "Для целого n >= 0 верните сумму чисел от 1 до n. Решите циклом.",
+    "examples": [
+      "4: 10",
+      "0: 0"
+    ],
+    "solution": "function sumTo(n) { let sum = 0; for (let i = 1; i <= n; i += 1) sum += i; return sum; }",
+    "cases": [
+      [
+        [
+          4
+        ],
+        10
+      ],
+      [
+        [
+          0
+        ],
+        0
+      ],
+      [
+        [
+          1
+        ],
+        1
+      ],
+      [
+        [
+          10
+        ],
+        55
+      ]
+    ]
+  },
+  {
+    "day": 3,
+    "name": "countChar",
+    "title": "Количество символов",
+    "prompt": "Верните, сколько раз char встречается в text. Сравнение чувствительно к регистру. text содержит обычные буквы без emoji.",
+    "examples": [
+      "'мама', 'м': 2",
+      "'', 'а': 0"
+    ],
+    "solution": "function countChar(text, char) { let count = 0; for (let i = 0; i < text.length; i += 1) if (text[i] === char) count += 1; return count; }",
+    "cases": [
+      [
+        [
+          "мама",
+          "м"
+        ],
+        2
+      ],
+      [
+        [
+          "",
+          "а"
+        ],
+        0
+      ],
+      [
+        [
+          "Аа",
+          "а"
+        ],
+        1
+      ],
+      [
+        [
+          "кот",
+          "я"
+        ],
+        0
+      ]
+    ]
+  },
+  {
+    "day": 3,
+    "name": "sumPositive",
+    "title": "Сумма положительных",
+    "prompt": "Верните сумму элементов массива numbers, которые строго больше нуля. Для пустого массива верните 0.",
+    "examples": [
+      "[2, -1, 0, 4]: 6",
+      "[]: 0"
+    ],
+    "solution": "function sumPositive(numbers) { let sum = 0; for (let i = 0; i < numbers.length; i += 1) if (numbers[i] > 0) sum += numbers[i]; return sum; }",
+    "cases": [
+      [
+        [
+          [
+            2,
+            -1,
+            0,
+            4
+          ]
+        ],
+        6
+      ],
+      [
+        [
+          []
+        ],
+        0
+      ],
+      [
+        [
+          [
+            -2,
+            -3
+          ]
+        ],
+        0
+      ],
+      [
+        [
+          [
+            5
+          ]
+        ],
+        5
+      ]
+    ]
+  },
+  {
+    "day": 3,
+    "name": "reverseText",
+    "title": "Строка наоборот",
+    "prompt": "Верните символы строки в обратном порядке. Используйте цикл. Вход содержит обычные буквы без emoji.",
+    "examples": [
+      "'кот': 'ток'",
+      "'': ''"
+    ],
+    "solution": "function reverseText(text) { let result = \"\"; for (let i = text.length - 1; i >= 0; i -= 1) result += text[i]; return result; }",
+    "cases": [
+      [
+        [
+          "кот"
+        ],
+        "ток"
+      ],
+      [
+        [
+          ""
+        ],
+        ""
+      ],
+      [
+        [
+          "а"
+        ],
+        "а"
+      ],
+      [
+        [
+          "ab cd"
+        ],
+        "dc ba"
+      ]
+    ]
+  },
+  {
+    "day": 4,
+    "name": "lastItem",
+    "title": "Последний элемент",
+    "prompt": "Верните последний элемент массива. Для пустого массива верните undefined.",
+    "examples": [
+      "[4, 8]: 8",
+      "[]: undefined"
+    ],
+    "solution": "function lastItem(items) { return items[items.length - 1]; }",
+    "cases": [
+      [
+        [
+          [
+            4,
+            8
+          ]
+        ],
+        8
+      ],
+      [
+        [
+          []
+        ],
+        {
+          "$undefined": true
+        }
+      ],
+      [
+        [
+          [
+            "а"
+          ]
+        ],
+        "а"
+      ]
+    ]
+  },
+  {
+    "day": 4,
+    "name": "appendCopy",
+    "title": "Дополнить копию",
+    "prompt": "Верните новый массив с item в конце. Исходный массив менять нельзя. Решите через slice и push.",
+    "examples": [
+      "[1, 2], 3: [1, 2, 3]",
+      "Исходный список остаётся [1, 2]"
+    ],
+    "solution": "function appendCopy(items, item) { const copy = items.slice(); copy.push(item); return copy; }",
+    "cases": [
+      [
+        [
+          [
+            1,
+            2
+          ],
+          3
+        ],
+        [
+          1,
+          2,
+          3
+        ]
+      ],
+      [
+        [
+          [],
+          0
+        ],
+        [
+          0
+        ]
+      ]
+    ]
+  },
+  {
+    "day": 4,
+    "name": "countAbove",
+    "title": "Количество выше порога",
+    "prompt": "Верните количество чисел, строго превышающих limit. Используйте for…of.",
+    "examples": [
+      "[10, 20, 30], 20: 1",
+      "[], 0: 0"
+    ],
+    "solution": "function countAbove(numbers, limit) { let count = 0; for (const number of numbers) if (number > limit) count += 1; return count; }",
+    "cases": [
+      [
+        [
+          [
+            10,
+            20,
+            30
+          ],
+          20
+        ],
+        1
+      ],
+      [
+        [
+          [],
+          0
+        ],
+        0
+      ],
+      [
+        [
+          [
+            5,
+            5
+          ],
+          5
+        ],
+        0
+      ]
+    ]
+  },
+  {
+    "day": 4,
+    "name": "removeAtCopy",
+    "title": "Удаление в копии",
+    "prompt": "Дан массив и корректный индекс. Верните новый массив без элемента на этом индексе. Исходный массив менять нельзя.",
+    "examples": [
+      "['а', 'б', 'в'], 1: ['а', 'в']",
+      "[7], 0: []"
+    ],
+    "solution": "function removeAtCopy(items, index) { const copy = items.slice(); copy.splice(index, 1); return copy; }",
+    "cases": [
+      [
+        [
+          [
+            "а",
+            "б",
+            "в"
+          ],
+          1
+        ],
+        [
+          "а",
+          "в"
+        ]
+      ],
+      [
+        [
+          [
+            7
+          ],
+          0
+        ],
+        []
+      ]
+    ]
+  },
+  {
+    "day": 5,
+    "name": "doubleAll",
+    "title": "Удвоить числа",
+    "prompt": "Верните новый массив, в котором каждое число удвоено. Используйте map.",
+    "examples": [
+      "[1, 3]: [2, 6]",
+      "[]: []"
+    ],
+    "solution": "function doubleAll(numbers) { return numbers.map((n) => n * 2); }",
+    "cases": [
+      [
+        [
+          [
+            1,
+            3
+          ]
+        ],
+        [
+          2,
+          6
+        ]
+      ],
+      [
+        [
+          []
+        ],
+        []
+      ],
+      [
+        [
+          [
+            -2,
+            0
+          ]
+        ],
+        [
+          -4,
+          0
+        ]
+      ]
+    ]
+  },
+  {
+    "day": 5,
+    "name": "keepEven",
+    "title": "Оставить чётные",
+    "prompt": "Верните новый массив всех чётных чисел. Используйте filter.",
+    "examples": [
+      "[1, 2, 0, 5]: [2, 0]",
+      "[1, 3]: []"
+    ],
+    "solution": "function keepEven(numbers) { return numbers.filter((n) => n % 2 === 0); }",
+    "cases": [
+      [
+        [
+          [
+            1,
+            2,
+            0,
+            5
+          ]
+        ],
+        [
+          2,
+          0
+        ]
+      ],
+      [
+        [
+          [
+            1,
+            3
+          ]
+        ],
+        []
+      ],
+      [
+        [
+          []
+        ],
+        []
+      ]
+    ]
+  },
+  {
+    "day": 5,
+    "name": "firstAbove",
+    "title": "Первое число выше порога",
+    "prompt": "Верните первое число, которое строго больше limit. Если его нет, верните undefined.",
+    "examples": [
+      "[3, 8, 10], 5: 8",
+      "[1, 2], 2: undefined"
+    ],
+    "solution": "function firstAbove(numbers, limit) { return numbers.find((n) => n > limit); }",
+    "cases": [
+      [
+        [
+          [
+            3,
+            8,
+            10
+          ],
+          5
+        ],
+        8
+      ],
+      [
+        [
+          [
+            1,
+            2
+          ],
+          2
+        ],
+        {
+          "$undefined": true
+        }
+      ],
+      [
+        [
+          [],
+          0
+        ],
+        {
+          "$undefined": true
+        }
+      ]
+    ]
+  },
+  {
+    "day": 5,
+    "name": "addTax",
+    "title": "Цены с надбавкой",
+    "prompt": "Верните новый массив цен с надбавкой percent процентов. Все входные цены неотрицательные, percent целое от 0 до 100.",
+    "examples": [
+      "[100, 200], 10: [110, 220]",
+      "[], 20: []"
+    ],
+    "solution": "function addTax(prices, percent) { return prices.map((price) => price + price * percent / 100); }",
+    "cases": [
+      [
+        [
+          [
+            100,
+            200
+          ],
+          10
+        ],
+        [
+          110,
+          220
+        ]
+      ],
+      [
+        [
+          [],
+          20
+        ],
+        []
+      ],
+      [
+        [
+          [
+            0,
+            50
+          ],
+          0
+        ],
+        [
+          0,
+          50
+        ]
+      ]
+    ]
+  },
+  {
+    "day": 6,
+    "name": "getField",
+    "title": "Значение по ключу",
+    "prompt": "Верните значение свойства key из object. Если свойства нет, естественный результат undefined.",
+    "examples": [
+      "{name: 'Анна'}, 'name': 'Анна'",
+      "{}, 'age': undefined"
+    ],
+    "solution": "function getField(object, key) { return object[key]; }",
+    "cases": [
+      [
+        [
+          {
+            "name": "Анна"
+          },
+          "name"
+        ],
+        "Анна"
+      ],
+      [
+        [
+          {},
+          "age"
+        ],
+        {
+          "$undefined": true
+        }
+      ],
+      [
+        [
+          {
+            "count": 0
+          },
+          "count"
+        ],
+        0
+      ]
+    ]
+  },
+  {
+    "day": 6,
+    "name": "getAdultNames",
+    "title": "Имена взрослых",
+    "prompt": "Дан массив объектов с полями name и age. Верните массив имён людей с age >= 18.",
+    "examples": [
+      "[{name: 'Анна', age: 18}, {name: 'Ира', age: 17}]: ['Анна']",
+      "[]: []"
+    ],
+    "solution": "function getAdultNames(users) { return users.filter((u) => u.age >= 18).map((u) => u.name); }",
+    "cases": [
+      [
+        [
+          [
+            {
+              "name": "Анна",
+              "age": 18
+            },
+            {
+              "name": "Ира",
+              "age": 17
+            }
+          ]
+        ],
+        [
+          "Анна"
+        ]
+      ],
+      [
+        [
+          []
+        ],
+        []
+      ]
+    ]
+  },
+  {
+    "day": 6,
+    "name": "sumScores",
+    "title": "Сумма значений объекта",
+    "prompt": "Объект содержит только числовые оценки. Верните их сумму. Для пустого объекта верните 0.",
+    "examples": [
+      "{a: 10, b: 20}: 30",
+      "{}: 0"
+    ],
+    "solution": "function sumScores(scores) { let sum = 0; for (const value of Object.values(scores)) sum += value; return sum; }",
+    "cases": [
+      [
+        [
+          {
+            "a": 10,
+            "b": 20
+          }
+        ],
+        30
+      ],
+      [
+        [
+          {}
+        ],
+        0
+      ],
+      [
+        [
+          {
+            "zero": 0
+          }
+        ],
+        0
+      ]
+    ]
+  },
+  {
+    "day": 6,
+    "name": "withCity",
+    "title": "Дополнить копию объекта",
+    "prompt": "Верните поверхностную копию user с полем city. Исходный объект менять нельзя.",
+    "examples": [
+      "{name: 'Анна'}, 'Омск': {name: 'Анна', city: 'Омск'}",
+      "Исходный user без нового поля"
+    ],
+    "solution": "function withCity(user, city) { const copy = Object.assign({}, user); copy.city = city; return copy; }",
+    "cases": [
+      [
+        [
+          {
+            "name": "Анна"
+          },
+          "Омск"
+        ],
+        {
+          "name": "Анна",
+          "city": "Омск"
+        }
+      ],
+      [
+        [
+          {
+            "city": "Москва"
+          },
+          "Тула"
+        ],
+        {
+          "city": "Тула"
+        }
+      ]
+    ]
+  },
+  {
+    "day": 7,
+    "name": "normalizeName",
+    "title": "Очистить имя",
+    "prompt": "Удалите пробелы по краям и приведите строку к нижнему регистру.",
+    "examples": [
+      "'  АННА ': 'анна'",
+      "'': ''"
+    ],
+    "solution": "function normalizeName(text) { return text.trim().toLowerCase(); }",
+    "cases": [
+      [
+        [
+          "  АННА "
+        ],
+        "анна"
+      ],
+      [
+        [
+          ""
+        ],
+        ""
+      ],
+      [
+        [
+          "  А Б  "
+        ],
+        "а б"
+      ]
+    ]
+  },
+  {
+    "day": 7,
+    "name": "containsText",
+    "title": "Поиск без учёта регистра",
+    "prompt": "Верните true, если text содержит query без учёта регистра. Пустой query считается найденным.",
+    "examples": [
+      "'JavaScript', 'SCRIPT': true",
+      "'кот', 'пёс': false"
+    ],
+    "solution": "function containsText(text, query) { return text.toLowerCase().includes(query.toLowerCase()); }",
+    "cases": [
+      [
+        [
+          "JavaScript",
+          "SCRIPT"
+        ],
+        true
+      ],
+      [
+        [
+          "кот",
+          "пёс"
+        ],
+        false
+      ],
+      [
+        [
+          "кот",
+          ""
+        ],
+        true
+      ]
+    ]
+  },
+  {
+    "day": 7,
+    "name": "getInitials",
+    "title": "Инициалы",
+    "prompt": "Получите заглавные первые буквы слов, разделённые точкой. Разделитель во входе обычный пробел, повторения и крайние пробелы разрешены. Пустой ввод даёт пустую строку.",
+    "examples": [
+      "'  анна иванова ': 'А.И'",
+      "'': ''"
+    ],
+    "solution": "function getInitials(fullName) { return fullName.trim().split(\" \").filter((w) => w !== \"\").map((w) => w[0].toUpperCase()).join(\".\"); }",
+    "cases": [
+      [
+        [
+          "  анна иванова "
+        ],
+        "А.И"
+      ],
+      [
+        [
+          ""
+        ],
+        ""
+      ],
+      [
+        [
+          "олег"
+        ],
+        "О"
+      ],
+      [
+        [
+          "а   б"
+        ],
+        "А.Б"
+      ]
+    ]
+  },
+  {
+    "day": 7,
+    "name": "longWords",
+    "title": "Длинные слова",
+    "prompt": "Верните массив слов с длиной не меньше minLength. Во входе обычные пробелы, слова без знаков препинания и emoji.",
+    "examples": [
+      "'кот и собака', 3: ['кот', 'собака']",
+      "'', 1: []"
+    ],
+    "solution": "function longWords(text, minLength) { return text.trim().split(\" \").filter((w) => w !== \"\" && w.length >= minLength); }",
+    "cases": [
+      [
+        [
+          "кот и собака",
+          3
+        ],
+        [
+          "кот",
+          "собака"
+        ]
+      ],
+      [
+        [
+          "",
+          1
+        ],
+        []
+      ],
+      [
+        [
+          "а  бб",
+          2
+        ],
+        [
+          "бб"
+        ]
+      ]
+    ]
+  },
+  {
+    "day": 8,
+    "name": "sumEven",
+    "title": "Сумма чётных",
+    "prompt": "Верните сумму чётных целых чисел массива. Для пустого массива верните 0. Сначала решите циклом.",
+    "examples": [
+      "[1, 2, 4, 5]: 6",
+      "[-2, 0, 3]: -2"
+    ],
+    "solution": "function sumEven(numbers) { let sum = 0; for (const n of numbers) if (n % 2 === 0) sum += n; return sum; }",
+    "cases": [
+      [
+        [
+          [
+            1,
+            2,
+            4,
+            5
+          ]
+        ],
+        6
+      ],
+      [
+        [
+          [
+            -2,
+            0,
+            3
+          ]
+        ],
+        -2
+      ],
+      [
+        [
+          []
+        ],
+        0
+      ]
+    ]
+  },
+  {
+    "day": 8,
+    "name": "countVowels",
+    "title": "Гласные в тексте",
+    "prompt": "Посчитайте английские гласные a, e, i, o, u без учёта регистра. Остальные символы не учитываются.",
+    "examples": [
+      "'Hello': 2",
+      "'AEIOU': 5",
+      "'': 0"
+    ],
+    "solution": "function countVowels(text) { let count = 0; for (const letter of text.toLowerCase()) if (\"aeiou\".includes(letter)) count += 1; return count; }",
+    "cases": [
+      [
+        [
+          "Hello"
+        ],
+        2
+      ],
+      [
+        [
+          "AEIOU"
+        ],
+        5
+      ],
+      [
+        [
+          ""
+        ],
+        0
+      ],
+      [
+        [
+          "rhythm"
+        ],
+        0
+      ]
+    ]
+  },
+  {
+    "day": 8,
+    "name": "maxNumber",
+    "title": "Максимум в массиве",
+    "prompt": "Верните максимальное число. Для пустого массива верните undefined. Массив менять нельзя.",
+    "examples": [
+      "[-5, -2, -9]: -2",
+      "[]: undefined"
+    ],
+    "solution": "function maxNumber(numbers) { if (numbers.length === 0) return undefined; let max = numbers[0]; for (const n of numbers) if (n > max) max = n; return max; }",
+    "cases": [
+      [
+        [
+          [
+            -5,
+            -2,
+            -9
+          ]
+        ],
+        -2
+      ],
+      [
+        [
+          []
+        ],
+        {
+          "$undefined": true
+        }
+      ],
+      [
+        [
+          [
+            0
+          ]
+        ],
+        0
+      ],
+      [
+        [
+          [
+            3,
+            3
+          ]
+        ],
+        3
+      ]
+    ]
+  },
+  {
+    "day": 8,
+    "name": "uniqueNumbers",
+    "title": "Убрать повторы",
+    "prompt": "Верните новый массив уникальных конечных чисел, сохранив порядок первого появления. Решите без Set.",
+    "examples": [
+      "[2, 1, 2, 3, 1]: [2, 1, 3]",
+      "[]: []"
+    ],
+    "solution": "function uniqueNumbers(numbers) { const result = []; for (const n of numbers) if (!result.includes(n)) result.push(n); return result; }",
+    "cases": [
+      [
+        [
+          [
+            2,
+            1,
+            2,
+            3,
+            1
+          ]
+        ],
+        [
+          2,
+          1,
+          3
+        ]
+      ],
+      [
+        [
+          []
+        ],
+        []
+      ],
+      [
+        [
+          [
+            0,
+            0,
+            -1
+          ]
+        ],
+        [
+          0,
+          -1
+        ]
+      ]
+    ]
+  },
+  {
+    "day": 9,
+    "name": "orderTotal",
+    "title": "Стоимость заказа",
+    "prompt": "Каждый объект заказа содержит конечные неотрицательные числа price и quantity. Верните сумму price * quantity по всем позициям.",
+    "examples": [
+      "[{price: 100, quantity: 2}, {price: 50, quantity: 1}]: 250",
+      "[]: 0"
+    ],
+    "solution": "function orderTotal(items) { let total = 0; for (const item of items) total += item.price * item.quantity; return total; }",
+    "cases": [
+      [
+        [
+          [
+            {
+              "price": 100,
+              "quantity": 2
+            },
+            {
+              "price": 50,
+              "quantity": 1
+            }
+          ]
+        ],
+        250
+      ],
+      [
+        [
+          []
+        ],
+        0
+      ],
+      [
+        [
+          [
+            {
+              "price": 10,
+              "quantity": 0
+            }
+          ]
+        ],
+        0
+      ]
+    ]
+  },
+  {
+    "day": 9,
+    "name": "affordableNames",
+    "title": "Товары в бюджете",
+    "prompt": "Верните названия товаров с price <= budget, сохранив порядок. Входные объекты содержат name и числовое price.",
+    "examples": [
+      "[{name: 'Чай', price: 100}, {name: 'Кофе', price: 200}], 100: ['Чай']",
+      "[]: []"
+    ],
+    "solution": "function affordableNames(items, budget) { return items.filter((x) => x.price <= budget).map((x) => x.name); }",
+    "cases": [
+      [
+        [
+          [
+            {
+              "name": "Чай",
+              "price": 100
+            },
+            {
+              "name": "Кофе",
+              "price": 200
+            }
+          ],
+          100
+        ],
+        [
+          "Чай"
+        ]
+      ],
+      [
+        [
+          [],
+          100
+        ],
+        []
+      ],
+      [
+        [
+          [
+            {
+              "name": "Вода",
+              "price": 0
+            }
+          ],
+          0
+        ],
+        [
+          "Вода"
+        ]
+      ]
+    ]
+  },
+  {
+    "day": 9,
+    "name": "formatPeople",
+    "title": "Отчёт об участниках",
+    "prompt": "Дан корректный массив объектов name и age. Выберите людей старше cutoffAge, приведите имена к верхнему регистру и верните текст 'ИМЯ (возраст)' через запятую. При отсутствии совпадений верните 'Нет участников'.",
+    "examples": [
+      "[{name: 'Анна', age: 25}], 20: 'АННА (25)'",
+      "[], 20: 'Нет участников'"
+    ],
+    "solution": "function formatPeople(people, cutoffAge) { const selected = people.filter((p) => p.age > cutoffAge); if (selected.length === 0) return \"Нет участников\"; return selected.map((p) => p.name.toUpperCase() + \" (\" + p.age + \")\").join(\", \"); }",
+    "cases": [
+      [
+        [
+          [
+            {
+              "name": "Анна",
+              "age": 25
+            }
+          ],
+          20
+        ],
+        "АННА (25)"
+      ],
+      [
+        [
+          [],
+          20
+        ],
+        "Нет участников"
+      ],
+      [
+        [
+          [
+            {
+              "name": "Ира",
+              "age": 20
+            }
+          ],
+          20
+        ],
+        "Нет участников"
+      ],
+      [
+        [
+          [
+            {
+              "name": "а",
+              "age": 30
+            },
+            {
+              "name": "б",
+              "age": 40
+            }
+          ],
+          20
+        ],
+        "А (30), Б (40)"
+      ]
+    ]
+  },
+  {
+    "day": 9,
+    "name": "wordLengths",
+    "title": "Длины слов",
+    "prompt": "Получите массив длин непустых слов строки. Разделитель обычный пробел, повторяющиеся пробелы допускаются. Слова без emoji.",
+    "examples": [
+      "'кот и собака': [3, 1, 6]",
+      "'  ': []"
+    ],
+    "solution": "function wordLengths(text) { return text.trim().split(\" \").filter((w) => w !== \"\").map((w) => w.length); }",
+    "cases": [
+      [
+        [
+          "кот и собака"
+        ],
+        [
+          3,
+          1,
+          6
+        ]
+      ],
+      [
+        [
+          "  "
+        ],
+        []
+      ],
+      [
+        [
+          "а  бб"
+        ],
+        [
+          1,
+          2
+        ]
+      ]
+    ]
+  },
+  {
+    "day": 10,
+    "name": "sumDigits",
+    "title": "Сумма цифр строки",
+    "prompt": "Дана строка, содержащая только цифры 0–9. Верните сумму цифр. Для пустой строки верните 0.",
+    "examples": [
+      "'204': 6",
+      "'': 0",
+      "'000': 0"
+    ],
+    "solution": "function sumDigits(text) { let sum = 0; for (const digit of text) sum += Number(digit); return sum; }",
+    "cases": [
+      [
+        [
+          "204"
+        ],
+        6
+      ],
+      [
+        [
+          ""
+        ],
+        0
+      ],
+      [
+        [
+          "000"
+        ],
+        0
+      ],
+      [
+        [
+          "9"
+        ],
+        9
+      ]
+    ]
+  },
+  {
+    "day": 10,
+    "name": "inStockNames",
+    "title": "Названия доступных товаров",
+    "prompt": "Дан массив объектов name и quantity. Верните имена товаров с quantity > 0. Сохраните порядок и входные данные.",
+    "examples": [
+      "[{name: 'Чай', quantity: 2}, {name: 'Кофе', quantity: 0}]: ['Чай']",
+      "[]: []"
+    ],
+    "solution": "function inStockNames(items) { return items.filter((x) => x.quantity > 0).map((x) => x.name); }",
+    "cases": [
+      [
+        [
+          [
+            {
+              "name": "Чай",
+              "quantity": 2
+            },
+            {
+              "name": "Кофе",
+              "quantity": 0
+            }
+          ]
+        ],
+        [
+          "Чай"
+        ]
+      ],
+      [
+        [
+          []
+        ],
+        []
+      ],
+      [
+        [
+          [
+            {
+              "name": "Вода",
+              "quantity": 1
+            }
+          ]
+        ],
+        [
+          "Вода"
+        ]
+      ]
+    ]
+  },
+  {
+    "day": 10,
+    "name": "longestWord",
+    "title": "Самое длинное слово",
+    "prompt": "Во входной строке слова разделены обычными пробелами, знаков препинания и emoji нет. Верните самое длинное слово; при равенстве первое. Для пустого ввода верните пустую строку.",
+    "examples": [
+      "'кот собака лев': 'собака'",
+      "'дом кот': 'дом'",
+      "'': ''"
+    ],
+    "solution": "function longestWord(text) { const words = text.trim().split(\" \").filter((w) => w !== \"\"); let longest = \"\"; for (const word of words) if (word.length > longest.length) longest = word; return longest; }",
+    "cases": [
+      [
+        [
+          "кот собака лев"
+        ],
+        "собака"
+      ],
+      [
+        [
+          "дом кот"
+        ],
+        "дом"
+      ],
+      [
+        [
+          ""
+        ],
+        ""
+      ],
+      [
+        [
+          "  а  бб "
+        ],
+        "бб"
+      ]
+    ]
+  },
+  {
+    "day": 10,
+    "name": "commonNumbers",
+    "title": "Дополнительно: общие числа",
+    "prompt": "Верните уникальные конечные числа, которые есть в обоих массивах. Порядок соответствует первому появлению в первом массиве.",
+    "examples": [
+      "[3, 1, 3, 2], [2, 3]: [3, 2]",
+      "[], [1]: []"
+    ],
+    "solution": "function commonNumbers(first, second) { const result = []; for (const n of first) if (second.includes(n) && !result.includes(n)) result.push(n); return result; }",
+    "cases": [
+      [
+        [
+          [
+            3,
+            1,
+            3,
+            2
+          ],
+          [
+            2,
+            3
+          ]
+        ],
+        [
+          3,
+          2
+        ]
+      ],
+      [
+        [
+          [],
+          [
+            1
+          ]
+        ],
+        []
+      ],
+      [
+        [
+          [
+            0,
+            0
+          ],
+          [
+            0
+          ]
+        ],
+        [
+          0
+        ]
+      ]
+    ]
+  }
+]
