@@ -1,0 +1,655 @@
+[
+  {
+    "day": 1,
+    "title": "Код и результат",
+    "code": "console.log(\"Привет, JavaScript!\");\nconsole.log(2 + 3);",
+    "stdout": [
+      "Привет, JavaScript!",
+      "5"
+    ]
+  },
+  {
+    "day": 1,
+    "title": "const и let",
+    "code": "const price = 150;\nlet quantity = 2;\nquantity = quantity + 1;\nconsole.log(price * quantity);",
+    "stdout": [
+      "450"
+    ]
+  },
+  {
+    "day": 1,
+    "title": "Основные типы",
+    "code": "console.log(typeof 42);\nconsole.log(typeof \"42\");\nconsole.log(typeof true);\nlet answer;\nconsole.log(answer);",
+    "stdout": [
+      "number",
+      "string",
+      "boolean",
+      "undefined"
+    ]
+  },
+  {
+    "day": 1,
+    "title": "Арифметика",
+    "code": "const price = 120;\nconst count = 3;\nconsole.log(price * count);\nconsole.log((price * count) - 50);\nconsole.log(7 % 2);",
+    "stdout": [
+      "360",
+      "310",
+      "1"
+    ]
+  },
+  {
+    "day": 1,
+    "title": "Строка и число",
+    "code": "console.log(\"12\" + 3);\nconsole.log(Number(\"12\") + 3);\nconsole.log(Number(\"кот\"));\nconsole.log(String(42));",
+    "stdout": [
+      "123",
+      "15",
+      "NaN",
+      "42"
+    ]
+  },
+  {
+    "day": 1,
+    "title": "Сравнение значений",
+    "code": "console.log(5 === 5);\nconsole.log(\"5\" === 5);\nconsole.log(10 >= 8);\nconsole.log(7 !== 7);",
+    "stdout": [
+      "true",
+      "false",
+      "true",
+      "false"
+    ]
+  },
+  {
+    "day": 2,
+    "title": "Условие if",
+    "code": "const age = 17;\nif (age >= 18) {\n  console.log(\"Доступ открыт\");\n} else {\n  console.log(\"Нужен взрослый\");\n}",
+    "stdout": [
+      "Нужен взрослый"
+    ]
+  },
+  {
+    "day": 2,
+    "title": "Несколько веток",
+    "code": "const score = 82;\nif (score >= 90) {\n  console.log(\"Отлично\");\n} else if (score >= 60) {\n  console.log(\"Зачёт\");\n} else {\n  console.log(\"Повторить\");\n}",
+    "stdout": [
+      "Зачёт"
+    ]
+  },
+  {
+    "day": 2,
+    "title": "Логические операторы",
+    "code": "const age = 20;\nconst hasTicket = true;\nconsole.log(age >= 18 && hasTicket);\nconsole.log(false || \"Гость\");\nconsole.log(!true);",
+    "stdout": [
+      "true",
+      "Гость",
+      "false"
+    ]
+  },
+  {
+    "day": 2,
+    "title": "Truthy и falsy",
+    "code": "console.log(Boolean(\"\"));\nconsole.log(Boolean(\"0\"));\nconsole.log(Boolean(0));\nconsole.log(Boolean([]));",
+    "stdout": [
+      "false",
+      "true",
+      "false",
+      "true"
+    ]
+  },
+  {
+    "day": 2,
+    "title": "Параметры и вызов",
+    "code": "function double(number) {\n  return number * 2;\n}\nconst result = double(7);\nconsole.log(result);\nconsole.log(double(0));",
+    "stdout": [
+      "14",
+      "0"
+    ]
+  },
+  {
+    "day": 2,
+    "title": "return и console.log",
+    "code": "function add(a, b) {\n  return a + b;\n}\nconst total = add(2, 3);\nconsole.log(total + 10);",
+    "stdout": [
+      "15"
+    ]
+  },
+  {
+    "day": 3,
+    "title": "Цикл for",
+    "code": "for (let i = 0; i < 3; i += 1) {\n  console.log(i);\n}",
+    "stdout": [
+      "0",
+      "1",
+      "2"
+    ]
+  },
+  {
+    "day": 3,
+    "title": "Накопитель",
+    "code": "function sumTo(n) {\n  let sum = 0;\n  for (let i = 1; i <= n; i += 1) {\n    sum += i;\n  }\n  return sum;\n}\nconsole.log(sumTo(4));",
+    "stdout": [
+      "10"
+    ]
+  },
+  {
+    "day": 3,
+    "title": "Строка и индекс",
+    "code": "const word = \"кот\";\nconsole.log(word.length);\nfor (let i = 0; i < word.length; i += 1) {\n  console.log(word[i]);\n}",
+    "stdout": [
+      "3",
+      "к",
+      "о",
+      "т"
+    ]
+  },
+  {
+    "day": 3,
+    "title": "Массив как список",
+    "code": "const scores = [10, 20, 30];\nlet sum = 0;\nfor (let i = 0; i < scores.length; i += 1) {\n  sum += scores[i];\n}\nconsole.log(sum);",
+    "stdout": [
+      "60"
+    ]
+  },
+  {
+    "day": 3,
+    "title": "Цикл while",
+    "code": "let left = 3;\nwhile (left > 0) {\n  console.log(left);\n  left -= 1;\n}",
+    "stdout": [
+      "3",
+      "2",
+      "1"
+    ]
+  },
+  {
+    "day": 3,
+    "title": "Условие внутри цикла",
+    "code": "const numbers = [2, -1, 0, 4];\nlet count = 0;\nfor (let i = 0; i < numbers.length; i += 1) {\n  if (numbers[i] > 0) count += 1;\n}\nconsole.log(count);",
+    "stdout": [
+      "2"
+    ]
+  },
+  {
+    "day": 4,
+    "title": "Элементы и length",
+    "code": "const names = [\"Анна\", \"Олег\"];\nnames[1] = \"Ира\";\nconsole.log(names[0]);\nconsole.log(names[1]);\nconsole.log(names.length);",
+    "stdout": [
+      "Анна",
+      "Ира",
+      "2"
+    ]
+  },
+  {
+    "day": 4,
+    "title": "Добавление и удаление",
+    "code": "const queue = [\"Анна\"];\nconsole.log(queue.push(\"Олег\"));\nconsole.log(queue.pop());\nconsole.log(queue.length);",
+    "stdout": [
+      "2",
+      "Олег",
+      "1"
+    ]
+  },
+  {
+    "day": 4,
+    "title": "Обход for…of",
+    "code": "const prices = [10, 20, 5];\nlet total = 0;\nfor (const price of prices) {\n  total += price;\n}\nconsole.log(total);",
+    "stdout": [
+      "35"
+    ]
+  },
+  {
+    "day": 4,
+    "title": "Копия через slice",
+    "code": "const original = [10, 20, 30];\nconst copy = original.slice();\ncopy.push(40);\nconsole.log(original.length);\nconsole.log(copy.length);\nconsole.log(original.slice(1, 2)[0]);",
+    "stdout": [
+      "3",
+      "4",
+      "20"
+    ]
+  },
+  {
+    "day": 4,
+    "title": "Изменение через splice",
+    "code": "const letters = [\"а\", \"б\", \"в\"];\nconst removed = letters.splice(1, 1, \"я\");\nconsole.log(removed[0]);\nconsole.log(letters[1]);\nconsole.log(letters.length);",
+    "stdout": [
+      "б",
+      "я",
+      "3"
+    ]
+  },
+  {
+    "day": 4,
+    "title": "Поиск циклом",
+    "code": "function findIndexOf(numbers, target) {\n  for (let i = 0; i < numbers.length; i += 1) {\n    if (numbers[i] === target) return i;\n  }\n  return -1;\n}\nconsole.log(findIndexOf([4, 8], 8));",
+    "stdout": [
+      "1"
+    ]
+  },
+  {
+    "day": 5,
+    "title": "Функция как значение",
+    "code": "function double(number) {\n  return number * 2;\n}\nfunction apply(value, operation) {\n  return operation(value);\n}\nconsole.log(apply(5, double));",
+    "stdout": [
+      "10"
+    ]
+  },
+  {
+    "day": 5,
+    "title": "Стрелочная запись",
+    "code": "const double = (number) => number * 2;\nconst triple = (number) => {\n  return number * 3;\n};\nconsole.log(double(4));\nconsole.log(triple(4));",
+    "stdout": [
+      "8",
+      "12"
+    ]
+  },
+  {
+    "day": 5,
+    "title": "map: новый массив",
+    "code": "const numbers = [1, 2, 3];\nconst doubled = numbers.map((n) => n * 2);\nconsole.log(doubled.join(\", \"));\nconsole.log(numbers.join(\", \"));",
+    "stdout": [
+      "2, 4, 6",
+      "1, 2, 3"
+    ]
+  },
+  {
+    "day": 5,
+    "title": "filter: отбор",
+    "code": "const numbers = [-2, 0, 3, 7];\nconst positive = numbers.filter((n) => n > 0);\nconsole.log(positive.join(\", \"));\nconsole.log(positive.length);",
+    "stdout": [
+      "3, 7",
+      "2"
+    ]
+  },
+  {
+    "day": 5,
+    "title": "find: одно значение",
+    "code": "const numbers = [3, 8, 10];\nconsole.log(numbers.find((n) => n > 5));\nconsole.log(numbers.find((n) => n > 20));",
+    "stdout": [
+      "8",
+      "undefined"
+    ]
+  },
+  {
+    "day": 5,
+    "title": "forEach и результат",
+    "code": "const numbers = [1, 2];\nconst result = numbers.forEach((n) => {\n  console.log(n * 10);\n  return n * 100;\n});\nconsole.log(result);",
+    "stdout": [
+      "10",
+      "20",
+      "undefined"
+    ]
+  },
+  {
+    "day": 6,
+    "title": "Объект: связанные данные",
+    "code": "const user = {\n  name: \"Анна\",\n  age: 20\n};\nconsole.log(user.name);\nconsole.log(user.age);",
+    "stdout": [
+      "Анна",
+      "20"
+    ]
+  },
+  {
+    "day": 6,
+    "title": "Точка и квадратные скобки",
+    "code": "const user = { name: \"Анна\", age: 20 };\nconst key = \"name\";\nconsole.log(user[key]);\nconsole.log(user.city);",
+    "stdout": [
+      "Анна",
+      "undefined"
+    ]
+  },
+  {
+    "day": 6,
+    "title": "Изменение свойств",
+    "code": "const user = { name: \"Анна\" };\nuser.city = \"Москва\";\nuser.name = \"Ира\";\nconsole.log(user.name);\nconsole.log(Object.hasOwn(user, \"city\"));\ndelete user.city;\nconsole.log(Object.hasOwn(user, \"city\"));",
+    "stdout": [
+      "Ира",
+      "true",
+      "false"
+    ]
+  },
+  {
+    "day": 6,
+    "title": "Ссылки и копирование",
+    "code": "const first = { score: 1 };\nconst alias = first;\nalias.score = 2;\nconsole.log(first.score);\nconst copy = Object.assign({}, first);\ncopy.score = 9;\nconsole.log(first === copy);\nconsole.log(first.score);",
+    "stdout": [
+      "2",
+      "false",
+      "2"
+    ]
+  },
+  {
+    "day": 6,
+    "title": "Ключи и значения",
+    "code": "const scores = { Анна: 10, Олег: 20 };\nconsole.log(Object.keys(scores).join(\", \"));\nlet sum = 0;\nfor (const value of Object.values(scores)) {\n  sum += value;\n}\nconsole.log(sum);",
+    "stdout": [
+      "Анна, Олег",
+      "30"
+    ]
+  },
+  {
+    "day": 6,
+    "title": "Отбор объектов",
+    "code": "const users = [\n  { name: \"Анна\", age: 20 },\n  { name: \"Олег\", age: 16 }\n];\nconst adults = users.filter((u) => u.age >= 18);\nconst names = adults.map((u) => u.name);\nconsole.log(names.join(\", \"));",
+    "stdout": [
+      "Анна"
+    ]
+  },
+  {
+    "day": 7,
+    "title": "Строки неизменяемы",
+    "code": "const name = \"Анна\";\nconst upper = name.toUpperCase();\nconsole.log(upper);\nconsole.log(name);",
+    "stdout": [
+      "АННА",
+      "Анна"
+    ]
+  },
+  {
+    "day": 7,
+    "title": "Пробелы и регистр",
+    "code": "const input = \"  JavaScript  \";\nconst normalized = input.trim().toLowerCase();\nconsole.log(normalized);\nconsole.log(input.length);",
+    "stdout": [
+      "javascript",
+      "14"
+    ]
+  },
+  {
+    "day": 7,
+    "title": "Поиск и фрагмент",
+    "code": "const text = \"JavaScript\";\nconsole.log(text.includes(\"Script\"));\nconsole.log(text.includes(\"script\"));\nconsole.log(text.slice(0, 4));",
+    "stdout": [
+      "true",
+      "false",
+      "Java"
+    ]
+  },
+  {
+    "day": 7,
+    "title": "split: строка в массив",
+    "code": "const input = \"  Анна  Олег \";\nconst parts = input.trim().split(\" \");\nconst words = parts.filter((part) => part !== \"\");\nconsole.log(words.length);\nconsole.log(words[1]);",
+    "stdout": [
+      "2",
+      "Олег"
+    ]
+  },
+  {
+    "day": 7,
+    "title": "join: массив в строку",
+    "code": "const names = [\"Анна\", \"Олег\"];\nconst line = names.join(\", \");\nconsole.log(line);\nconsole.log(typeof line);",
+    "stdout": [
+      "Анна, Олег",
+      "string"
+    ]
+  },
+  {
+    "day": 7,
+    "title": "Решение по шагам",
+    "code": "function initials(fullName) {\n  const words = fullName.trim().split(\" \");\n  const nonEmpty = words.filter((w) => w !== \"\");\n  const letters = nonEmpty.map((w) => w[0].toUpperCase());\n  return letters.join(\".\");\n}\nconsole.log(initials(\"  анна иванова \"));",
+    "stdout": [
+      "А.И"
+    ]
+  },
+  {
+    "day": 8,
+    "title": "Вход и выход",
+    "code": "function countPositive(numbers) {\n  let count = 0;\n  for (const n of numbers) {\n    if (n > 0) count += 1;\n  }\n  return count;\n}\nconsole.log(countPositive([]));",
+    "stdout": [
+      "0"
+    ]
+  },
+  {
+    "day": 8,
+    "title": "Состояние алгоритма",
+    "code": "const numbers = [2, 3, 4];\nlet product = 1;\nfor (const n of numbers) {\n  product *= n;\n}\nconsole.log(product);",
+    "stdout": [
+      "24"
+    ]
+  },
+  {
+    "day": 8,
+    "title": "Проверка решения",
+    "code": "const input = [1, 2];\nconst output = input.map((n) => n + 1);\nconsole.log(input.join(\",\"));\nconsole.log(output.join(\",\"));\nconsole.log(input === output);",
+    "stdout": [
+      "1,2",
+      "2,3",
+      "false"
+    ]
+  },
+  {
+    "day": 8,
+    "title": "Поиск причины ошибки",
+    "code": "const numbers = [2, 4];\nlet sum = 0;\nfor (let i = 0; i < numbers.length; i += 1) {\n  sum += numbers[i];\n  console.log(i, sum);\n}",
+    "stdout": [
+      "0 2",
+      "1 6"
+    ]
+  },
+  {
+    "day": 9,
+    "title": "Составная задача",
+    "code": "const items = [\n  { name: \"Чай\", available: true },\n  { name: \"Кофе\", available: false }\n];\nconst selected = items.filter((x) => x.available);\nconst names = selected.map((x) => x.name);\nconsole.log(names.join(\", \"));",
+    "stdout": [
+      "Чай"
+    ]
+  },
+  {
+    "day": 9,
+    "title": "Контракт функции",
+    "code": "function addNumbers(a, b) {\n  if (typeof a !== \"number\" || typeof b !== \"number\") {\n    return \"Некорректные данные\";\n  }\n  return a + b;\n}\nconsole.log(addNumbers(\"2\", 3));",
+    "stdout": [
+      "Некорректные данные"
+    ]
+  },
+  {
+    "day": 9,
+    "title": "Пустой результат",
+    "code": "const names = [];\nif (names.length === 0) {\n  console.log(\"Нет участников\");\n} else {\n  console.log(names.join(\", \"));\n}",
+    "stdout": [
+      "Нет участников"
+    ]
+  },
+  {
+    "day": 9,
+    "title": "Проверка исходных данных",
+    "code": "const original = [10, 2, 30];\nconst sorted = original.slice().sort((a, b) => a - b);\nconsole.log(original.join(\", \"));\nconsole.log(sorted.join(\", \"));",
+    "stdout": [
+      "10, 2, 30",
+      "2, 10, 30"
+    ]
+  },
+  {
+    "day": 10,
+    "title": "Проверка собственного кода",
+    "code": "function firstItem(items) {\n  return items[0];\n}\nconsole.log(firstItem([7]));\nconsole.log(firstItem([]));",
+    "stdout": [
+      "7",
+      "undefined"
+    ]
+  },
+  {
+    "day": 1,
+    "title": "7. Особенности typeof",
+    "code": "console.log(typeof null);\nconsole.log(typeof 42n);\nconsole.log(typeof Symbol(\"ticket\"));\nconsole.log(typeof []);\nconsole.log(typeof console.log);",
+    "stdout": [
+      "object",
+      "bigint",
+      "symbol",
+      "object",
+      "function"
+    ]
+  },
+  {
+    "day": 1,
+    "title": "8. Преобразование и числовые ограничения",
+    "code": "console.log(Number(\"18rem\"));\nconsole.log(parseFloat(\"18rem\"));\nconsole.log(parseInt(\"18.7rem\", 10));\nconsole.log(+\"6.5\");\nconsole.log(Number(\"  \"));\nconsole.log(Number.isNaN(Number(\"нет\")));\nconsole.log(-(-8));\nconsole.log(1 / 0);",
+    "stdout": [
+      "NaN",
+      "18",
+      "18",
+      "6.5",
+      "0",
+      "true",
+      "8",
+      "Infinity"
+    ]
+  },
+  {
+    "day": 2,
+    "title": "7. Операнды и двойное отрицание",
+    "code": "console.log(\"черновик\" && 0 && \"готово\");\nconsole.log(\"черновик\" && \"готово\");\nconsole.log(\"\" || \"без названия\" || \"резерв\");\nconsole.log(false || null);\nconsole.log(!!\"запись\");\nconsole.log(!!0);",
+    "stdout": [
+      "0",
+      "готово",
+      "без названия",
+      "null",
+      "true",
+      "false"
+    ]
+  },
+  {
+    "day": 2,
+    "title": "8. Блок, функция и объявления",
+    "code": "function showScope() {\n  console.log(status);\n  if (true) {\n    var status = \"в процессе\";\n    const label = \"внутри блока\";\n    console.log(label);\n  }\n  console.log(status);\n  // label здесь недоступна\n}\nshowScope();",
+    "stdout": [
+      "undefined",
+      "внутри блока",
+      "в процессе"
+    ]
+  },
+  {
+    "day": 2,
+    "title": "9. Проверка аргумента до вычислений",
+    "code": "function hoursToMinutes(hours) {\n  if (!Number.isFinite(hours)) return undefined;\n  return hours * 60;\n}\nconsole.log(hoursToMinutes(1.5));\nconsole.log(hoursToMinutes(\"1.5\"));\nconsole.log(hoursToMinutes());\nconsole.log(hoursToMinutes(NaN));",
+    "stdout": [
+      "90",
+      "undefined",
+      "undefined",
+      "undefined"
+    ]
+  },
+  {
+    "day": 3,
+    "title": "7. Направление и шаг цикла",
+    "code": "function showCheckpoints(note) {\n  for (let point = 18; point >= 6; point -= 6) {\n    console.log(point);\n  }\n  console.log(note);\n}\nshowCheckpoints(\"Проверка закончена\");",
+    "stdout": [
+      "18",
+      "12",
+      "6",
+      "Проверка закончена"
+    ]
+  },
+  {
+    "day": 3,
+    "title": "8. Накопление строки и остаток",
+    "code": "const word = \"abcdef\";\nlet result = \"\";\nfor (let i = 0; i < word.length; i += 1) {\n  if (i % 3 === 2) {\n    result += word[i].toUpperCase();\n  } else {\n    result += word[i];\n  }\n}\nconsole.log(result);",
+    "stdout": [
+      "abCdeF"
+    ]
+  },
+  {
+    "day": 4,
+    "title": "7. Одна ссылка и новый массив",
+    "code": "const source = [6, 9, 12];\nconst alias = source;\nconsole.log(source === alias);\nalias.push(15);\nconsole.log(source.length);\nconst backwards = [];\nfor (let i = source.length - 1; i >= 0; i -= 1) {\n  backwards.push(source[i]);\n}\nconsole.log(backwards.join(\",\"));\nconsole.log(source.join(\",\"));\nconsole.log(Array.isArray(source));",
+    "stdout": [
+      "true",
+      "4",
+      "15,12,9,6",
+      "6,9,12,15",
+      "true"
+    ]
+  },
+  {
+    "day": 6,
+    "title": "7. Равенство объектов",
+    "code": "const card = { title: \"Заметка\" };\nconst other = { title: \"Заметка\" };\nconst alias = card;\nconsole.log(card === other);\nconsole.log(card === alias);\nconsole.log(card.title === other.title);",
+    "stdout": [
+      "false",
+      "true",
+      "true"
+    ]
+  },
+  {
+    "day": 7,
+    "title": "7. Индекс, границы и округление",
+    "code": "const caption = \"планета\";\nconst cursor = Math.floor(caption.length / 2);\nconsole.log(cursor);\nconsole.log(caption.slice(cursor - 1, cursor + 2));\nconsole.log(\"маршрут\".slice(0, 50));\nconsole.log(\"план\".slice(1, -1));\nconsole.log(\"\".slice(0, 2));",
+    "stdout": [
+      "3",
+      "ане",
+      "маршрут",
+      "ла",
+      ""
+    ]
+  },
+  {
+    "day": 7,
+    "title": "8. Выбрать, заменить или пропустить символ",
+    "code": "const code = \"robot\";\nconst removedIndex = 2;\nconst withoutOne = code.slice(0, removedIndex) + code.slice(removedIndex + 1);\nconsole.log(withoutOne);\nlet selected = \"\";\nfor (let i = 0; i < code.length; i += 1) {\n  if (i % 3 !== 1) selected += code[i];\n}\nconsole.log(selected);\nconsole.log(code.indexOf(\"ro\"));\nconsole.log(code.indexOf(\"x\"));",
+    "stdout": [
+      "root",
+      "rbo",
+      "0",
+      "-1"
+    ]
+  },
+  {
+    "day": 7,
+    "title": "9. Текстовый шаблон и числовой фрагмент",
+    "code": "const label = \"Секция\";\nconst position = 4;\nconsole.log(`${label}: место ${position}`);\nconst record = \"уровень:7.25\";\nconst separator = record.indexOf(\":\");\nconst fragment = record.slice(separator + 1).trim();\nconsole.log(Number(fragment));\nconsole.log(Number(\"7.25level\"));\nconsole.log(parseFloat(\"7.25level\"));",
+    "stdout": [
+      "Секция: место 4",
+      "7.25",
+      "NaN",
+      "7.25"
+    ]
+  },
+  {
+    "day": 8,
+    "title": "5. Делители и границы перебора",
+    "code": "const number = 14;\nconst divisors = [];\nfor (let candidate = 1; candidate <= number; candidate += 1) {\n  if (number % candidate === 0) divisors.push(candidate);\n}\nconsole.log(divisors.join(\",\"));\nconsole.log(divisors.length);",
+    "stdout": [
+      "1,2,7,14",
+      "4"
+    ]
+  },
+  {
+    "day": 8,
+    "title": "6. Несколько строк результата",
+    "code": "for (let row = 0; row < 2; row += 1) {\n  let line = \"\";\n  for (let column = 0; column < 3; column += 1) {\n    if (column > 0) line += \" | \";\n    line += row + column;\n  }\n  console.log(line);\n}",
+    "stdout": [
+      "0 | 1 | 2",
+      "1 | 2 | 3"
+    ]
+  },
+  {
+    "day": 8,
+    "title": "7. Два предыдущих состояния",
+    "code": "let previous = 2;\nlet current = 5;\nconsole.log(0, previous);\nconsole.log(1, current);\nfor (let index = 2; index <= 4; index += 1) {\n  const next = previous + current;\n  previous = current;\n  current = next;\n  console.log(index, current);\n}",
+    "stdout": [
+      "0 2",
+      "1 5",
+      "2 7",
+      "3 12",
+      "4 19"
+    ]
+  },
+  {
+    "day": 8,
+    "title": "8. Выбор наименьшего значения",
+    "code": "const temperatures = [7, -6, 3, -9];\nlet lowest = temperatures[0];\nfor (let i = 1; i < temperatures.length; i += 1) {\n  if (temperatures[i] < lowest) lowest = temperatures[i];\n}\nconsole.log(lowest);",
+    "stdout": [
+      "-9"
+    ]
+  },
+  {
+    "day": 10,
+    "title": "5. Цифры числа и цифры строки",
+    "code": "const reading = -608;\nconsole.log(Number.isSafeInteger(reading));\nconst digits = String(Math.abs(reading));\nconsole.log(digits);\nconsole.log(digits.length);\nconsole.log(Number(digits[1]));\nlet rest = Math.abs(reading);\nwhile (rest > 0) {\n  console.log(rest % 10);\n  rest = Math.trunc(rest / 10);\n}",
+    "stdout": [
+      "true",
+      "608",
+      "3",
+      "0",
+      "8",
+      "0",
+      "6"
+    ]
+  }
+]
