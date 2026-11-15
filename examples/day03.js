@@ -1,6 +1,7 @@
 "use strict";
 
-// Запуск: node examples/day03.js
+// Запуск: скопируйте один блок { ... } в JavaScript-песочницу, например https://trycode.pw/
+// Результат смотрите в выводе console.log.
 
 {
   for (let i = 0; i < 3; i += 1) {

@@ -1,6 +1,7 @@
 "use strict";
 
-// Запуск: node examples/day01.js
+// Запуск: скопируйте один блок { ... } в JavaScript-песочницу, например https://trycode.pw/
+// Результат смотрите в выводе console.log.
 
 {
   console.log("Привет, JavaScript!");
