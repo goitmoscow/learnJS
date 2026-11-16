@@ -19,12 +19,11 @@
   {
     "day": 1,
     "title": "Основные типы",
-    "code": "console.log(typeof 42);\nconsole.log(typeof \"42\");\nconsole.log(typeof true);\nlet answer;\nconsole.log(answer);",
+    "code": "console.log(typeof 42);\nconsole.log(typeof \"42\");\nconsole.log(typeof true);",
     "stdout": [
       "number",
       "string",
-      "boolean",
-      "undefined"
+      "boolean"
     ]
   },
   {
@@ -650,6 +649,56 @@
       "8",
       "0",
       "6"
+    ]
+  },
+  {
+    "day": 1,
+    "title": "Тип значения при переназначении",
+    "code": "let value = 42;\nconsole.log(typeof value);\nvalue = \"42\";\nconsole.log(typeof value);",
+    "stdout": [
+      "number",
+      "string"
+    ]
+  },
+  {
+    "day": 1,
+    "title": "undefined и null",
+    "code": "let destination;\nconst selectedRoute = null;\nconsole.log(destination);\nconsole.log(selectedRoute);\nconsole.log(destination === selectedRoute);",
+    "stdout": [
+      "undefined",
+      "null",
+      "false"
+    ]
+  },
+  {
+    "day": 1,
+    "title": "BigInt: большие ID",
+    "code": "const idText = \"9007199254740993\";\nconst previousText = \"9007199254740992\";\nconsole.log(Number(idText) === Number(previousText));\nconst id = BigInt(idText);\nconst previousId = BigInt(previousText);\nconsole.log(id === previousId);\nconsole.log(String(id + 1n));",
+    "stdout": [
+      "true",
+      "false",
+      "9007199254740994"
+    ]
+  },
+  {
+    "day": 1,
+    "title": "Symbol: служебный ключ",
+    "code": "const serviceId = Symbol(\"id\");\nconst anotherServiceId = Symbol(\"id\");\nconst user = { id: \"public-42\" };\nuser[serviceId] = \"service-17\";\nconsole.log(user.id);\nconsole.log(user[serviceId]);\nconsole.log(serviceId === anotherServiceId);",
+    "stdout": [
+      "public-42",
+      "service-17",
+      "false"
+    ]
+  },
+  {
+    "day": 1,
+    "title": "Объект, массив и функция",
+    "code": "const route = { name: \"Центр\", stops: 3 };\nconsole.log(typeof route);\nconsole.log(route.stops);\nconsole.log(Array.isArray([]));\nconsole.log(typeof console.log);",
+    "stdout": [
+      "object",
+      "3",
+      "true",
+      "function"
     ]
   }
 ]
